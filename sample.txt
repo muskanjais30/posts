@@ -1,0 +1,7 @@
+{
+    "productCode" : "8AECD69",
+    "productName" : "Syed Shabiul Sadique Husain",
+    "productImage" : "https://www.pexels.com/photo/town-with-beach-on-amalfi-coast-18771871/",
+    "productCategory" : "Binary",
+    "productCost" : 2000
+}
