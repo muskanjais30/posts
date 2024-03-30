@@ -18,8 +18,8 @@ async function uploadfileoncloudinary(file, folder) {
 
 router.post('/upload', async (req, res) => {
     try {
-        const { postContent, ClubName, CollegeName, votes } = req.body;
-        console.log(postContent, ClubName, CollegeName, votes);
+        const { postContent, ClubName, CollegeName, domain } = req.body;
+        // console.log(postContent, ClubName, CollegeName, votes);
 
         const file = req.files.postImages;
         console.log(file);
@@ -42,7 +42,7 @@ router.post('/upload', async (req, res) => {
             postContent,
             ClubName,
             CollegeName,
-            votes,
+            domain,
             imageUrl: response.secure_url,
         });
 

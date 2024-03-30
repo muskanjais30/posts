@@ -18,6 +18,10 @@ const postSchema = mongoose.Schema(
             type: String,
             required: false
         },
+        domain: {
+            type: String,
+            required: true
+        },
         votes: {
             type: Number,
             required: true,
