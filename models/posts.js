@@ -19,7 +19,7 @@ const postSchema = mongoose.Schema(
             required: false
         },
         domain: {
-            type: String,
+            type: [String],
             required: true
         },
         votes: {

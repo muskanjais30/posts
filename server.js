@@ -3,32 +3,16 @@ const app = express();
 const PORT = 8000;
 const mongoose = require('mongoose');
 const router = require('./routes/route');
-
-// const multer = require('../middleware/uploadImage'); // Assuming you have the Multer configuration in a separate file
-// const { GridFSBucket } = require('mongodb');
-// const upload = require("./routes/uploadImage");
-// const Grid = require('gridfs-stream');
-// let gfs;
-// connection();
-
-// const conn = mongoose.connection;
-// conn.once("open", function () {
-//     gfs = new mongoose.mongo.GridFSBucket(conn.db, {
-//         bucketName: "photos"
-//     });
-// });
-
-// app.get('file/filename',async (req, res) => {
-//     try {
-//         const file = await gfs.files.findOne({ filename: req.params.filename });
-//         const readStream = gfs.createReadStream(file.filename);
-//         readStream.pipe(res);
-//     } catch (error) {
-//         res.send("not found");
-//     }
-// })
+const cors = require("cors")
 
 const cloudinary = require("cloudinary").v2;
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+  });
 
 const cloudinaryConnect=()=>{
     try{
